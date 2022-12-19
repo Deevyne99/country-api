@@ -2,12 +2,12 @@ import React from 'react'
 import { useGlobalContext } from '../../Hooks/context/Context'
 import Countries from '../countries/Countries'
 const CountryList = () => {
-  const { loading, description, data, isError } = useGlobalContext()
+  const { loading, description, isError } = useGlobalContext()
 
   if (loading) {
     return <div className='loading'></div>
   }
-  if (description.length < 1) {
+  if (description && description.length < 1) {
     return (
       <div>
         <h1>not found</h1>
